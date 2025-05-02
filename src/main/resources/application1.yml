@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: test-topic
+          group: test-group
+        output:
+          destination: test-topic
+      kafka:
+        binder:
+          brokers: localhost:9092
+          auto-create-topics: false
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    org.springframework.kafka: DEBUG
